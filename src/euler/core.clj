@@ -5,3 +5,4 @@
 (load "p3")
 (load "p4")
 (load "p5")
+(load "p6")
