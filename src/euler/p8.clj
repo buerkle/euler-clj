@@ -26,8 +26,5 @@
 (defn to-product [v]
   (reduce * (map #(Character/getNumericValue %) v)))
 
-(defn to-adjacency-list [data digits]
-  (map to-product (partition digits 1 data)))
-
 (defn p8 [n]
   (reduce max (map to-product (partition n 1 p8-data))))
