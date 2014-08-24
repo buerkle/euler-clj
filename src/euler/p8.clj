@@ -1,6 +1,6 @@
-(ns euler.core)
+(ns euler.p8)
 
-(def p8-data
+(def data
   (apply str
          ["73167176531330624919225119674426574742355349194934"
           "96983520312774506326239578318016984801869478851843"
@@ -26,5 +26,6 @@
 (defn to-product [v]
   (reduce * (map #(Character/getNumericValue %) v)))
 
-(defn p8 [n]
-  (reduce max (map to-product (partition n 1 p8-data))))
+(defn run
+  ([] (run 13))
+  ([n] (reduce max (map to-product (partition n 1 data)))))

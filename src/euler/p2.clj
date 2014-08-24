@@ -1,4 +1,4 @@
-(ns euler.core)
+(ns euler.p2)
 
 ; http://en.wikibooks.org/wiki/Clojure_Programming/Examples/Lazy_Fibonacci
 (defn fib-step [[a b]]
@@ -7,7 +7,9 @@
 (defn fib []
   (map first (iterate fib-step [0 1])))
 
-(defn p2 []
-  (let [values (take-while #(< % 4000000) (fib))]
-    (reduce +
-            (filter even? values))))
+(defn run
+  ([] (run 4000000))
+  ([terms]
+     (let [values (take-while #(< % terms) (fib))]
+       (reduce +
+               (filter even? values)))))

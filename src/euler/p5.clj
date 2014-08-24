@@ -1,4 +1,4 @@
-(ns euler.core)
+(ns euler.p5)
 
 (defn gcd
   [^long a ^long b]
@@ -12,5 +12,6 @@
 (defn lcm [a b]
   (/ (* a b) (gcd a b)))
 
-(defn p5 [a b]
-  (reduce lcm (range a (inc b))))
+(defn run
+  ([] (run 1 20))
+  ([a b] (reduce lcm (range a (inc b)))))

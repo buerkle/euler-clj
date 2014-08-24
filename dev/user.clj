@@ -10,5 +10,4 @@
    [clojure.set :as set]
    [clojure.string :as str]
    [clojure.test :as test]
-   [clojure.tools.namespace.repl :refer (refresh refresh-all)]
-   [euler.core]))
+   [clojure.tools.namespace.repl :refer (refresh refresh-all)]))

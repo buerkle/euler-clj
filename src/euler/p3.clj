@@ -1,4 +1,4 @@
-(ns euler.core)
+(ns euler.p3)
 
 (defn max-prime
   [x]
@@ -10,5 +10,6 @@
         (recur (/ n factor) factor)
         (recur n (inc factor))))))
 
-(defn p3 [n]
-  (max-prime n))
+(defn run
+  ([] (run 600851475143))
+  ([n] (max-prime n)))
