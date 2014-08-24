@@ -1,13 +1,12 @@
-(ns euler.core)
+(ns euler.p9)
 
 (defn triplet? [value x y z]
-  (and (= value (+ x y z))
-       (< x y z)
+  (and (< x y z)
        (= (+ (* x x) (* y y)) (* z z))))
 
-(defn p9 [max]
-  (first (for [x (range max)
-               y (range max)
-               z (range max)
-               :when (triplet? max x y z)]
-           (* x y z))))
+(defn run [target]
+  (first (for [x (range target)
+               y (range target)
+               :let [z (- target x y)]
+               :when (triplet? target x y z)]
+           [x y z (* x y z)])))
